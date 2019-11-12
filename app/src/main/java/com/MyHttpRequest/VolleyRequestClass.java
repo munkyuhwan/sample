@@ -1,6 +1,7 @@
 package com.MyHttpRequest;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -19,10 +20,10 @@ import java.util.Map;
 
 public class VolleyRequestClass {
 
-    private Activity mCurrentActivity;
+    private Context mContext;
 
-    public VolleyRequestClass(Activity currentActivity) {
-        this.mCurrentActivity = currentActivity;
+    public VolleyRequestClass(Context context) {
+        this.mContext = context;
     }
 
     public void multipartVolley(final Map<String, String> jsonDatas, final String dataRequestURL) {
@@ -56,25 +57,32 @@ public class VolleyRequestClass {
             }
 
         };
-        Volley.newRequestQueue(mCurrentActivity).add(volleyMultipartRequest);
+
+        Volley.newRequestQueue(mContext).add(volleyMultipartRequest);
     }
 
     private void errorToast() {
+        /*
         mCurrentActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 Toast.makeText(mCurrentActivity, "네트워크 오류가 있습니다.", Toast.LENGTH_SHORT).show();
             }
         });
+
+         */
     }
 
     private void successToast() {
+        /*
         mCurrentActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 Toast.makeText(mCurrentActivity, "데이터가 전송되었습니다.", Toast.LENGTH_SHORT).show();
             }
         });
+
+         */
     }
 
     public void startSendData(final Map<String, String> jsonDatas, String dataRequestURL) {
