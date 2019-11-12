@@ -16,18 +16,22 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="webview url: "/>
+                android:layout_weight="1.7"
+                android:text="webview url: " />
             <EditText
                 android:id="@+id/webview_url"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="http://" />
             <Button
                 android:id="@+id/url_load"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="웹뷰에 로드"/>
+                android:text="웹뷰에 로드"
+                android:layout_weight="1.6"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,53 +43,88 @@
                 android:text="url: "/>
             <EditText
                 android:id="@+id/url"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="http://"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="name: "/>
-            <EditText
-                android:id="@+id/name_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="name: "/>
+                <EditText
+                    android:id="@+id/name_value"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="age: "/>
+                <EditText
+                    android:id="@+id/age_value"
+                    android:layout_width="52dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="전송 간격: "/>
+                <EditText
+                    android:id="@+id/seconds"
+                    android:layout_width="52dp"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:inputType="number"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="초"/>
+            </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/post_btn"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="age: "/>
-            <EditText
-                android:id="@+id/age_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_weight="1"
+                android:text="전송시작"/>
+
+            <Button
+                android:id="@+id/stop_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="전송중지"/>
         </LinearLayout>
-        <Button
-            android:id="@+id/post_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="전송시작"/>
-
-        <Button
-            android:id="@+id/stop_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="전송중지"/>
-
-
 
     </LinearLayout>
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        />
 
 </LinearLayout>
